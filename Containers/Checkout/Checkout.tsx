@@ -1,26 +1,33 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import styles from './Checkout.module.css'
-
 export default class Checkout extends React.Component{
    
     render(){
         return(
-            <View style={style.stil1}>
-                <label>Checkout Component</label>
-                <View style={style.stil1}>
+            <View style={viewStyle.view}>
+                <label style={styles.title}>Checkout Component</label>
+                <View style={viewStyle.view}>
                 </View>
             </View>
         )
     }
 }
 
-const style = StyleSheet.create({
-    stil1:{
+const viewStyle = StyleSheet.create({
+    view: {
         flex: 1,
-        label: {
-            textAlign: center
-        }
+        backgroundColor: 'red'
     }
-})
+});
+
+const styles = {
+    title:{        
+        padding: 5+'px',
+        borderWidth: 1+'px',
+        borderStyle: 'solid',
+        borderColor: 'green',
+        fontFamily: 'Oswald',
+        backgroundColor: 'white'
+    }
+}

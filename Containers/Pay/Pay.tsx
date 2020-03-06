@@ -1,8 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import './Pay.css';
-
 export default class Pay extends React.Component{
     constructor(props){
         super(props);        
@@ -10,17 +8,29 @@ export default class Pay extends React.Component{
 
     render(){
         return(
-            <View style={style.stil1}>
-                <label>Pay Component</label>
-                <View style={style.stil1}>
+            <View style={viewStyle.view}>
+                <label style={styles.title}>Pay Component</label>
+                <View style={viewStyle.view}>
                 </View>
             </View>           
         )
     }
 }
 
-const style = StyleSheet.create({
-    stil1:{
-        flex: 1
+const viewStyle = StyleSheet.create({
+    view:{
+        flex: 1,
+        backgroundColor: 'green'
     }
 })
+
+const styles = {
+    title: {
+        padding: 5+'px',
+        fontFamily: 'Oswald',
+        borderWidth: 1+'px',
+        borderStyle: 'solid',
+        borderColor: 'red',
+        backgroundColor: 'white'
+    }
+}

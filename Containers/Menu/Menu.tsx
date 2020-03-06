@@ -1,29 +1,40 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import './Menu.css';
-
 export default class Menu extends Component{
     constructor(props){
         super(props);
     }   
 
-    render(){
+    render(){              
         return(
-            <View style={viewStyle.stil1}>
-                <ul className="menu">
-                    <li>Pay</li>
-                    <li>Checkout</li>
+            <View style={viewStyle.view}>
+                <ul style={styles.menu}>
+                    <li style={styles.listItem}>Pay</li>
+                    <li style={styles.listItem}>Checkout</li>
                 </ul>                
             </View>
         )
     }
 }
 
-const viewStyle = StyleSheet.create({
-    stil1:{
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        backgroundColor: 'lightblue'
+const styles = ({  
+    menu:{
+        listStyleType: 'none',
+        margin: 0,
+        padding: 0
+    },
+    listItem: {
+        display: 'inline',
+        padding: 5+'px',
+        fontFamily: 'Oswald'
     }
 });
+
+const viewStyle = StyleSheet.create({
+    view:{
+        flexDirection: 'row',
+        justifyContent: 'flex-end'
+    }
+})
+

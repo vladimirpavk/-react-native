@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 
+import './App.css';
+
 import Menu from './Containers/Menu/Menu';
 import Pay from './Containers/Pay/Pay';
 import Checkout from './Containers/Checkout/Checkout';
@@ -17,9 +19,8 @@ class App extends Component<MyProps, MyState>{
 
   render(){
     return(
-      <View style={{flex:1, flexDirection: 'column'}}>    
-        <Menu />    
-        {/* <View style={styles.stil1}></View> */}       
+      <View style={componentStyles.view}>    
+        <Menu />
         <Pay />
         <Checkout />
       </View>
@@ -27,10 +28,10 @@ class App extends Component<MyProps, MyState>{
   } 
 }
 
-const styles = StyleSheet.create({
-  stil1: {
+const componentStyles = StyleSheet.create({
+  view:{
     flex:1,
-    backgroundColor: 'skyblue'
+    flexDirection: 'column'
   }
 });
 
