@@ -1,5 +1,10 @@
+import 'react-native-gesture-handler';
+
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import './App.css';
 
@@ -11,6 +16,8 @@ interface MyProps{}
 interface MyState{
 }
 
+const Stack = createStackNavigator();
+
 class App extends Component<MyProps, MyState>{
 
   constructor(props){
@@ -18,12 +25,24 @@ class App extends Component<MyProps, MyState>{
   }   
 
   render(){
-    return(
-      <View style={componentStyles.view}>    
+    return(      
+      <NavigationContainer>        
+         <Stack.Navigator initialRouteName="Checkout">
+          <Stack.Screen 
+            name="Pay"            
+            component={Pay}
+          />
+          <Stack.Screen
+            name="Checkout"
+            component={Checkout}>                      
+          </Stack.Screen>
+        </Stack.Navigator> 
+      </NavigationContainer>
+    /*   <View style={componentStyles.view}>    
         <Menu />
         <Pay />
         <Checkout />
-      </View>
+      </View> */
     );
   } 
 }
