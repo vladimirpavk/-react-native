@@ -12,11 +12,27 @@ import Menu from './Containers/Menu/Menu';
 import Pay from './Containers/Pay/Pay';
 import Checkout from './Containers/Checkout/Checkout';
 
+import Logo from './Components/Logo/Logo';
+
 interface MyProps{}
 interface MyState{
 }
 
-const Stack = createStackNavigator();
+export type RootStackParamList = {
+  Pay: {
+    name: string,
+    lastname: string,
+    addr: {
+      street: string,
+      num: number
+    }
+  },
+  Checkout: {
+    title: string
+  }
+}
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 class App extends Component<MyProps, MyState>{
 
@@ -30,12 +46,13 @@ class App extends Component<MyProps, MyState>{
          <Stack.Navigator initialRouteName="Checkout">
           <Stack.Screen 
             name="Pay"            
-            component={Pay}
-          />
+            component={Pay}/>
           <Stack.Screen
             name="Checkout"
-            component={Checkout}>                      
-          </Stack.Screen>
+            component={Checkout}
+            options={{
+             headerTitle: (props)=><Logo {...props}/>
+            }}/>                              
         </Stack.Navigator> 
       </NavigationContainer>
     /*   <View style={componentStyles.view}>    

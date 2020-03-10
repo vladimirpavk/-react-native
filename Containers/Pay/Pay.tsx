@@ -3,7 +3,8 @@ import { StyleSheet, View } from 'react-native';
 
 export default class Pay extends React.Component{
     constructor(props){
-        super(props);        
+        super(props);       
+        console.log(JSON.stringify(props.route.params));
     }
 
     render(){
